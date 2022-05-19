@@ -120,7 +120,7 @@ my_exp %>%
 <!--   * **Public speaking**:   -->
 <!--       I  have attended and presented my scientific work in several national and international conferences, both orally and in poster format. -->
       
-# Selected Publications
+# Key Selected Publications
 
 ```{r}
 # Present two separate lists of 'selected' and 'other' publications
@@ -128,6 +128,12 @@ my_exp %>%
 selected <- c(
   "Immune Surveillance in Clinical Regression of Preinvasive Squamous Cell Lung Cancer",
   "Deciphering the genomic, epigenomic, and transcriptomic landscapes of pre-invasive lung cancer lesions"
+)
+
+# Label co-first papers:
+cofirst <- c(
+  "Deciphering the genomic, epigenomic, and transcriptomic landscapes of pre-invasive lung cancer lesions",
+  "Molecular Characterization of Acute Cellular Rejection Occurring During Intentional Immunosuppression Withdrawal in Liver Transplantation."
 )
 
 library(rorcid)
@@ -148,7 +154,13 @@ out$authors <- sapply(out$`put-code`, function(x) {
     auths <- c(auths[1:maxlen], 'et. al')
   }
 
-  paste(auths, collapse = ', ')
+  a <- paste(auths, collapse = ', ')
+  
+  if(z$work.title.title.value %in% cofirst) {
+    a <- paste("(Co-first author)", a)
+  }
+  
+  a
 })
 
 
