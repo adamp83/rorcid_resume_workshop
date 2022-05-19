@@ -1,5 +1,14 @@
 # Creating a Resume in RStudio using rorcid and ORCID API
 
+Adapted from https://github.com/pow123/rorcid_resume_workshop
+
+Need to add .Renviron file containing the line:
+
+ORCID_TOKEN="XXXXX"
+
+The token can be obtained using rorcid::orcid_auth()
+
+
 ** *This file is using github-flavored markdown and should be [viewed in GitHub](https://github.com/pow123/rorcid_resume_workshop/blob/main/README.md)* **
 ## About the Workshop
 

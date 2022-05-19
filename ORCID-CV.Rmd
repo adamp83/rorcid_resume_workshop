@@ -1,21 +1,32 @@
 ---
-name: "InputFirst"
-surname: "InputLast"
-position: "Input Titles or Abbreviations"
-address: "Input Address"
-phone: "+1998 765 4321"
+name: "Adam"
+surname: "Pennycuick"
+position: "MRCP PhD MBBS MPhys"
+address: "20 Castleton Road, London, E17 4AR"
+phone: "+44(0)7889192790"
 profilepic: "ProfilePic.jpg"
-email: "youremail@address.edu"
-twitter: "UsernameOnly"
-linkedin: "FriendlyURL"
+email: "a.pennycuick@ucl.ac.uk"
+twitter: "adampennycuick"
+linkedin: "adam-pennycuick-68401737"
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Input a short bio here. Describe yourself in a couple of sentences."
-output: vitae::awesomecv
+aboutme: "NIHR Clinical Lecturer in Medical Oncology"
+output: vitae::moderncv
 ---
 
 ```{r setup, include=FALSE}
+# Requirements:
+# biocManager::install('vitae')
+# .Renviron file containing this line:
+#   ORCID_TOKEN="XXXX"
+# where the token comes from running
+# library(rorcid)
+# orcid_auth()
+
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
+
+# My orcid ID:
+oid <- "0000-0001-5836-0250"
 ```
 
 ```{r}
@@ -28,7 +39,7 @@ library(vitae)
 library(rorcid)
 library(dplyr)
 my_ed <- do.call("bind_rows",
-  rorcid::orcid_educations("0000-0001-6229-7514")$`0000-0001-6229-7514`$`affiliation-group`$summaries
+  rorcid::orcid_educations(oid)[[oid]]$`affiliation-group`$summaries
 )
 my_ed %>%
   detailed_entries(
@@ -51,8 +62,11 @@ my_ed %>%
 
 ```{r}
 my_exp <- do.call("bind_rows",
-  rorcid::orcid_employments("0000-0001-6229-7514")$`0000-0001-6229-7514`$`affiliation-group`$summaries
+  rorcid::orcid_employments(oid)[[oid]]$`affiliation-group`$summaries
 )
+
+# Change NA to "Present"
+my_exp$`employment-summary.end-date.year.value`[which(is.na(my_exp$`employment-summary.end-date.year.value`))] <- 'now'
 
 #For the my_exp variable below: if there is no end date on your recent employment, replace `employment-summary.end-date.year.value` with `employment-summary.end-date`. 
 my_exp %>%
@@ -71,42 +85,110 @@ my_exp %>%
 #) %>% 
 #  detailed_entries(Details, Year, Experience, Institution)
 ```
-# Languages:
-  
-  * **English**: native language.
-  * **Spanish**: advanced speaking, writing and reading.
-  * **French**: intermediate speaking, writing and reading.
 
-# Skills
-These are some of the skills and knowledge I aquired during my training, education and courses
+# Grants Awarded:
 
-  * **First overarching skillname**:  
-      List the details, including software, techniques, etc.
-  * **Second overarching skillname**:  
-      List the details, including software, techniques, etc.
-  * **Other informatic tools**:  
-      Microsoft Office; Google Suite; GraphPad Prism; LaTeX; Git; HTML & CSS.
-  * **Public speaking**:  
-      I  have attended and presented my scientific work in several national and international conferences, both orally and in poster format.
+  * **ELIMINATE: Reinterpreting the ‘field of injury’ through understanding cellular level damage and dynamics and consequences for the Prediction, Prevention and Early Detection, of lung cancer (Co-I)**. Cancer Research UK. 2020-2025, £2.5m
+* **ASCENT: Analysis of screen-detected lung cancer genomic traits (Co-I)**. Cancer Research UK. 2019-2022, £600,000
+* **Wellcome Trust/UCL PhD Training Fellowship**: Bioinformatic analysis of early lung cancer pathogenesis. 2017-2021. £270,000.
+* **Oslr medical bedside teaching platform**. 2019. InnovateUK. £70,000.
+
+# Supervision:
+
+* Secondary PhD supervisor for Hugh Selway, UCL 2021-present.
+* Secondary PhD supervisor for Lukas Kalinke, clinical fellow at UCL 2021-present.
+* Supervised MRC-DTP project for Kate Fodder, UCL 2021.
+* Primary supervisor for Ayu Syarif, MSc in Precision Oncology, UCL 2020.
+
+# Teaching and Leadership:
+
+* **Founder and CEO of Oslr Ltd.**, a platform connecting medical students with doctors willing to teach. Supporters include Health Education England, the BMJ, Jisc, King’s College London, Guy’s and St Thomas’ NHS Foundation Trust. Our platform has won innovation awards and is live across multiple hospital sites. £230,000 funding has been raised to date through a combination of grants and private investment, including Innovate UK funding. I lead a team of 5 people.
+* **Lead for Denmark Hill Teaching Group** 2013-14, coordinating all teaching delivered by junior doctors to medical students at King’s College Hospital to include bedside teaching, lectures and mock OSCEs.
+* **Regular bedside teaching experience** throughout clinical training.
+* **Written and presented lectures** on core medical topics to groups of up to 40 medical students.
+* Non-medical teaching experience including maths and science tutoring at age 10-16, and teaching English as a foreign language at Moscow State University.
+
+<!-- # Skills -->
+<!-- These are some of the skills and knowledge I aquired during my training, education and courses -->
+
+<!--   * **First overarching skillname**:   -->
+<!--       List the details, including software, techniques, etc. -->
+<!--   * **Second overarching skillname**:   -->
+<!--       List the details, including software, techniques, etc. -->
+<!--   * **Other informatic tools**:   -->
+<!--       Microsoft Office; Google Suite; GraphPad Prism; LaTeX; Git; HTML & CSS. -->
+<!--   * **Public speaking**:   -->
+<!--       I  have attended and presented my scientific work in several national and international conferences, both orally and in poster format. -->
       
-# Publications
+# Selected Publications
 
 ```{r}
+# Present two separate lists of 'selected' and 'other' publications
+
+selected <- c(
+  "Immune Surveillance in Clinical Regression of Preinvasive Squamous Cell Lung Cancer",
+  "Deciphering the genomic, epigenomic, and transcriptomic landscapes of pre-invasive lung cancer lesions"
+)
+
 library(rorcid)
 library(tidyverse)
-out <- works(orcid_id("0000-0001-6229-7514")) 
- tibble(
-   Journal = out$`journal-title.value`,
-   Title = out$title.title.value,
-   Year = out$`publication-date.year.value`,
-   DOI = out$url.value
- ) %>% 
+out <- works(orcid_id(oid)) 
+
+# Need to get authors separately:
+y <- orcid_works(oid, put_code = out$`put-code`)
+y <- y[[1]]$works
+y <- y[match(out$`put-code`, y$`work.put-code`),]
+out$authors <- sapply(out$`put-code`, function(x) {
+  z <- y[which(y$`work.put-code` == x),]
+  auths <- z$work.contributors.contributor[[1]]$`credit-name.value`
+  # Limit authors to max(5, my position), if longer use et. al
+  mypos <- grep('Pennycuick', auths)
+  maxlen <- max(6, mypos)
+  if(length(auths) > maxlen) {
+    auths <- c(auths[1:maxlen], 'et. al')
+  }
+
+  paste(auths, collapse = ', ')
+})
+
+
+
+# Bug fixes
+out$title.title.value <- gsub('<i>', '', out$title.title.value)
+out$title.title.value <- gsub('</i>', '', out$title.title.value)
+
+papers <- tibble(
+  Journal = out$`journal-title.value`,
+  Title = out$title.title.value,
+  Year = out$`publication-date.year.value`,
+  DOI = out$url.value,
+  Authors = gsub('Adam Pennycuick', 'Adam Pennycuick', out$authors, fixed = T)
+) 
+
+papers %>%
+  filter(Title %in% selected) %>%
   detailed_entries(
-  DOI,
-  Journal,
-  Title,
-  Year
+    Title,
+    Year,
+    Authors,
+    Journal,
+    # Year, 
+    DOI
 )
 
 ```
 
+# Other Publications
+
+```{r}
+papers %>%
+  filter(!(Title %in% selected)) %>%
+  detailed_entries(
+    Title,
+    Year,
+    Authors,
+    Journal,
+    # Year, 
+    DOI
+)
+```
