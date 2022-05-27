@@ -74,7 +74,7 @@ my_exp %>%
     what = `employment-summary.role-title`,
     when = glue::glue("{`employment-summary.start-date.year.value`} - {`employment-summary.end-date.year.value`}"),
     with = `employment-summary.organization.name`,
-    where = glue::glue("{`employment-summary.organization.address.city`}, {`employment-summary.organization.address.region`}")
+    where = glue::glue("{`employment-summary.organization.address.city`}")
   )
 
 #tribble(
@@ -95,6 +95,7 @@ my_exp %>%
 
 # Supervision:
 
+* Secondary PhD supervisor for Ryan Chuen, UCL 2022-present.
 * Secondary PhD supervisor for Hugh Selway, UCL 2021-present.
 * Secondary PhD supervisor for Lukas Kalinke, clinical fellow at UCL 2021-present.
 * Supervised MRC-DTP project for Kate Fodder, UCL 2021.
