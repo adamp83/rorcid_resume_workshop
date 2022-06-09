@@ -1,6 +1,4 @@
 ---
-name: "Adam"
-surname: "Pennycuick"
 position: "MRCP PhD MBBS MPhys"
 address: "20 Castleton Road, London, E17 4AR"
 phone: "+44(0)7889192790"
@@ -9,7 +7,6 @@ email: "a.pennycuick@ucl.ac.uk"
 twitter: "adampennycuick"
 linkedin: "adam-pennycuick-68401737"
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "NIHR Clinical Lecturer in Medical Oncology"
 output: vitae::moderncv
 ---
 
@@ -32,6 +29,12 @@ oid <- "0000-0001-5836-0250"
 ```{r}
 #Beware of Latex and the latex packages needed for compiling. See https://yihui.org/tinytex/r/#debugging if you get any errors related to *.tex compiling 
 ```
+
+---
+name: "`r rorcid::orcid_id(oid)[[oid]]$name$'given-names'$value`"
+surname: "`r rorcid::orcid_id(oid)[[oid]]$name$'family-name'$value`"
+aboutme: "`r rorcid::orcid_bio(orcid = oid)[[oid]]$content`"
+---
 
 # Education
 
@@ -88,6 +91,7 @@ my_exp %>%
 
 # Grants Awarded:
 
+  * **Epi-ASCENT: The epigenetic landscape of screen-detected lung cancers (Co-I)**. Cancer Research UK. 2022-2025, £194,000.
   * **ELIMINATE: Reinterpreting the ‘field of injury’ through understanding cellular level damage and dynamics and consequences for the Prediction, Prevention and Early Detection, of lung cancer (Co-I)**. Cancer Research UK. 2020-2025, £2.5m
 * **ASCENT: Analysis of screen-detected lung cancer genomic traits (Co-I)**. Cancer Research UK. 2019-2022, £600,000
 * **Wellcome Trust/UCL PhD Training Fellowship**: Bioinformatic analysis of early lung cancer pathogenesis. 2017-2021. £270,000.
