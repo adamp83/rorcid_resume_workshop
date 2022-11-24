@@ -1,9 +1,9 @@
 ---
 position: "MRCP PhD MBBS MPhys"
-address: "20 Castleton Road, London, E17 4AR"
-phone: "+44(0)7889192790"
+#address: "20 Castleton Road, London, E17 4AR"
+#phone: "+44(0)7889192790"
 profilepic: "ProfilePic.jpg"
-email: "a.pennycuick@ucl.ac.uk"
+#email: "a.pennycuick@ucl.ac.uk"
 twitter: "adampennycuick"
 linkedin: "adam-pennycuick-68401737"
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -99,11 +99,12 @@ my_exp %>%
 
 # Supervision:
 
-* Secondary PhD supervisor for Ryan Chuen, UCL 2022-present.
+* Secondary PhD supervisor for Lukas Kalinke, clinical fellow at UCL 2019-2022.
 * Secondary PhD supervisor for Hugh Selway, UCL 2021-present.
-* Secondary PhD supervisor for Lukas Kalinke, clinical fellow at UCL 2021-present.
-* Supervised MRC-DTP project for Kate Fodder, UCL 2021.
+* Secondary PhD supervisor for Ryan Chuen, UCL 2022-present.
 * Primary supervisor for Ayu Syarif, MSc in Precision Oncology, UCL 2020.
+* Supervised MRC-DTP project for Kate Fodder, UCL 2021.
+* Personal tutor for UCL students 2022-present.
 
 # Teaching and Leadership:
 
