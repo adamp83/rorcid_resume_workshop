@@ -91,6 +91,7 @@ my_exp %>%
 
 # Grants Awarded:
 
+  * **Parallelised Cancer Therapy based on Copy Number Targeting (PI)**. Academy of Medical Sciences. 2023-2024, £20,000.
   * **Epi-ASCENT: The epigenetic landscape of screen-detected lung cancers (Co-I)**. Cancer Research UK. 2022-2025, £194,000.
   * **ELIMINATE: Reinterpreting the ‘field of injury’ through understanding cellular level damage and dynamics and consequences for the Prediction, Prevention and Early Detection, of lung cancer (Co-I)**. Cancer Research UK. 2020-2025, £2.5m
 * **ASCENT: Analysis of screen-detected lung cancer genomic traits (Co-I)**. Cancer Research UK. 2019-2022, £600,000
@@ -99,9 +100,8 @@ my_exp %>%
 
 # Supervision:
 
-* Secondary PhD supervisor for Lukas Kalinke, clinical fellow at UCL 2019-2022.
-* Secondary PhD supervisor for Hugh Selway, UCL 2021-present.
-* Secondary PhD supervisor for Ryan Chuen, UCL 2022-present.
+* Primary PhD supervisor for Hugh Selway, UCL 2021-present.
+* Secondary PhD supervisor for Lukas Kalinke (clinical fellow at UCL 2019-2022); Ryan Chuen (UCL 2022-present); Kate Davies (UCL 2022-present); James Lam (UCL 2023-present).
 * Primary supervisor for Ayu Syarif, MSc in Precision Oncology, UCL 2020.
 * Supervised MRC-DTP project for Kate Fodder, UCL 2021.
 * Personal tutor for UCL students 2022-present.
@@ -109,9 +109,8 @@ my_exp %>%
 # Teaching and Leadership:
 
 * **Founder and CEO of Oslr Ltd.**, a platform connecting medical students with doctors willing to teach. Supporters include Health Education England, the BMJ, Jisc, King’s College London, Guy’s and St Thomas’ NHS Foundation Trust. Our platform has won innovation awards and is live across multiple hospital sites. £230,000 funding has been raised to date through a combination of grants and private investment, including Innovate UK funding. I lead a team of 5 people.
-* **Lead for Denmark Hill Teaching Group** 2013-14, coordinating all teaching delivered by junior doctors to medical students at King’s College Hospital to include bedside teaching, lectures and mock OSCEs.
-* **Regular bedside teaching experience** throughout clinical training.
-* **Written and presented lectures** on core medical topics to groups of up to 40 medical students.
+* **Leadership Fellow** Society of Leadership Fellows, St Georges House, Windsor Castle. 2023-present.
+* **Regular bedside teaching experience** throughout clinical training, including leading the Denmark Hill Teaching Group at King's College Hospital and delivering lecture courses. Taught entrepreneurship to medical students.
 * Non-medical teaching experience including maths and science tutoring at age 10-16, and teaching English as a foreign language at Moscow State University.
 
 <!-- # Skills -->
@@ -125,6 +124,8 @@ my_exp %>%
 <!--       Microsoft Office; Google Suite; GraphPad Prism; LaTeX; Git; HTML & CSS. -->
 <!--   * **Public speaking**:   -->
 <!--       I  have attended and presented my scientific work in several national and international conferences, both orally and in poster format. -->
+      
+***
       
 # Key Selected Publications
 
